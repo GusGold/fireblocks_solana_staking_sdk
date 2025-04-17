@@ -31,7 +31,7 @@ export class FbSigner {
             if(tx.status != prevStatus){
                 console.log("Transaction's status: " + tx.status);
             }
-            setTimeout(() => { }, 4000); 
+            await new Promise((resolve) => setTimeout(resolve, 4000));
         }
         
         return (await this.fireblocks.getTransactionById(fbTx.id));
